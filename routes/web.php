@@ -32,7 +32,7 @@ Route::get('greetings',"ViewController@showGreetings") ;
 Route::post('sayhi',"ViewController@sayHi") ;
 */
 
-//route CRUD
+//route CRUD pegawai
 Route::get('/pegawai','PegawaiController@index');
 
 Route::get('/pegawai/tambah','PegawaiController@tambah');
@@ -44,3 +44,16 @@ Route::get('/pegawai/edit/{id}','PegawaiController@edit');
 Route::post('/pegawai/update','PegawaiController@update');
 
 Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
+
+//route CRUD pendapatan
+Route::get('/pendapatan','PendapatanController@home');
+
+Route::get('/pendapatan/add','PendapatanController@add');
+
+Route::post('/pendapatan/save','PendapatanController@save');
+
+Route::get('/pendapatan/edit/{id}','PendapatanController@edit');
+
+Route::post('/pendapatan/update','PendapatanController@update');
+
+Route::get('/pendapatan/hapus/{id}','PendapatanController@hapus');
