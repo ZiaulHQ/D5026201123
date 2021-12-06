@@ -1,30 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Edit Data Pendapatan</title>
-</head>
-<body>
+@extends('layout.happy')
+@section('title', 'Pegawai')
+@section('judulhalaman', 'Edit Pendapatan Pegawai')
 
-	<h3>Edit Pendapatan</h3>
+@section('konten')
+    <br>
+    <a href="/pendapatan" class="btn btn-info"> Kembali</a>
 
-	<a href="/pendapatan"> Kembali</a>
+    <br />
+    <br />
 
-	<br/>
-	<br/>
+    @foreach ($pendapatan as $p)
+        <form action="/pendapatan/update" method="post">
+            {{ csrf_field() }}
+            <input type="hidden" name="id" value="{{ $p->ID }}"> <br />
+            IDPegawai <input type="number" class="form-control" required="required" name="idpegawai"
+                value="{{ $p->IDPegawai }}"> <br />
 
-	@foreach($pendapatan as $p)
-	<form action="/pendapatan/update" method="post">
-		{{ csrf_field() }}
-		<input type="hidden" name="id" value="{{ $p->ID }}"> <br/>
-        IDPegawai <input type="number" required="required" name="idpegawai" value="{{ $p->IDPegawai }}"> <br/>
-		Bulan <input type="number" required="required" name="bulan" value="{{ $p->Bulan }}"> <br/>
-		Tahun <input type="number" required="required" name="tahun" value="{{ $p->Tahun }}"> <br/>
-		Gaji <input type="number" required="required" name="gaji" value="{{ $p->Gaji }}"> <br/>
-        Tunjangan <input type="number" required="required" name="tunjangan" value="{{ $p->Tunjangan }}"> <br/>
-		<input type="submit" value="Simpan Data">
-	</form>
-	@endforeach
+            Bulan <input type="number" class="form-control" required="required" name="bulan" value="{{ $p->Bulan }}">
+            <br />
 
+            Tahun <input type="number" class="form-control" required="required" name="tahun" value="{{ $p->Tahun }}">
+            <br />
 
-</body>
-</html>
+            Gaji <input type="number" class="form-control" required="required" name="gaji" value="{{ $p->Gaji }}">
+            <br />
+
+            Tunjangan <input type="number" class="form-control" required="required" name="tunjangan"
+                value="{{ $p->Tunjangan }}"> <br />
+
+            <input type="submit" class="btn btn-primary" value="Simpan Data">
+        </form>
+    @endforeach
+@endsection

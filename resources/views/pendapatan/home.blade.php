@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Pendapatan</title>
-</head>
-<body>
-	<h3>Pendapatan Pegawai</h3>
+@extends('layout.happy')
+@section('title','Pegawai')
+@section('judulhalaman', 'Pedapatan Pegawai')
 
-	<a href="/pendapatan/add"> + Tambah Data pendapatan</a>
+@section('konten')
+    <br>
+	<a href="/pendapatan/add" class="btn btn-info"> + Tambah Data pendapatan</a>
 
 	<br/>
 	<br/>
@@ -34,8 +32,5 @@
 			</td>
 		</tr>
 		@endforeach
-	</table>
-
-
-</body>
-</html>
+    </table>
+@endsection
