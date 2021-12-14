@@ -11,7 +11,11 @@ class PendapatanController extends Controller
     public function home()
     {
         // mengambil data dari table pendapatan
-        $pendapatan = DB::table('pendapatan')->get();
+        // $pendapatan = DB::table('pendapatan')->get();
+        $pendapatan = DB::table('pendapatan')
+        ->join('pegawai', 'pendapatan.IDPegawai', '=', 'pegawai.pegawai_id')
+        ->select('pendapatan.*', 'pegawai.pegawai_nama')
+        ->paginate(3);
 
         // mengirim data pegawai ke view home
         return view('pendapatan.home', ['pendapatan' => $pendapatan]);

@@ -11,24 +11,26 @@
 
     <table border="1">
         <tr>
-            <th>ID Pegawai</th>
+            <th>Nama Pegawai</th>
             <th>Tanggal</th>
             <th>Status</th>
             <th>Opsi</th>
         </tr>
         @foreach ($absen as $a)
             <tr>
-                <td>{{ $a->IDPegawai }}</td>
+                <td>{{ $a->pegawai_nama }}</td>
                 <td>{{ $a->Tanggal }}</td>
                 <td>{{ $a->Status }}</td>
                 <td>
-                    <a href="/absen/edit/{{ $a->ID }}">Edit</a>
-                    |
-                    <a href="/absen/hapus/{{ $a->ID }}">Hapus</a>
+                    <a href="/absen/edit/{{ $a->ID }}" class="btn btn-default btn-sm" role="button">Edit</a>
+
+                    <a href="/absen/hapus/{{ $a->ID }}" class="btn btn-default btn-sm" role="button">Hapus</a>
                 </td>
             </tr>
         @endforeach
     </table>
+    {{ $absen->links() }}
+
 @endsection
 
 </body>

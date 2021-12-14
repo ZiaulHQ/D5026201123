@@ -11,7 +11,7 @@
 
 	<table border="1">
 		<tr>
-			<th>IDPegawai</th>
+			<th>Nama Pegawai</th>
 			<th>Bulan</th>
 			<th>Tahun</th>
 			<th>Gaji</th>
@@ -20,17 +20,18 @@
 		</tr>
 		@foreach($pendapatan as $p)
 		<tr>
-			<td>{{ $p->IDPegawai }}</td>
+			<td>{{ $p->pegawai_nama }}</td>
 			<td>{{ $p->Bulan }}</td>
 			<td>{{ $p->Tahun }}</td>
 			<td>{{ $p->Gaji }}</td>
             <td>{{ $p->Tunjangan }}</td>
 			<td>
-				<a href="/pendapatan/edit/{{ $p->ID }}">Edit</a>
-				|
-				<a href="/pendapatan/hapus/{{ $p->ID }}">Hapus</a>
+				<a href="/pendapatan/edit/{{ $p->ID }}" class="btn btn-default btn-sm" role="button">Edit</a>
+
+				<a href="/pendapatan/hapus/{{ $p->ID }}" class="btn btn-default btn-sm" role="button">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
     </table>
+    {{ $pendapatan->links()  }}
 @endsection

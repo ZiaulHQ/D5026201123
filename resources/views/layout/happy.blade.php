@@ -66,11 +66,10 @@
                 <div class="container"><a href="/pegawai">Pegawai</a></div>
                 <div class="container"><a href="/absen">Absen</a></div>
                 <div class="container"><a href="/pendapatan">Pendapatan</a></div>
-                <div class="container"><a href="">Minggu Depan</a></div>
-                <div class="container"><a href="">Praktikum</a></div>
+                <div class="container"><a href="/lipstick">Lipstick</a></div>
             </div>
 
-            <div class="col-lg-7 box">
+            <div class="col-lg-8 box">
                 @yield('judulhalaman')<br>
                 @section('konten')
                 @show
