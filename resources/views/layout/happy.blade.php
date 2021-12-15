@@ -67,6 +67,7 @@
                 <div class="container"><a href="/absen">Absen</a></div>
                 <div class="container"><a href="/pendapatan">Pendapatan</a></div>
                 <div class="container"><a href="/lipstick">Lipstick</a></div>
+                <div class="container"><a href="/karyawan1">EAS</a></div>
             </div>
 
             <div class="col-lg-8 box">

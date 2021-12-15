@@ -92,3 +92,12 @@ Route::get('/lipstick/hapus/{id}','LipstickController@hapus');
 Route::get('/lipstick/detail/{id}','LipstickController@view');
 
 Route::get('/lipstick/cari','LipstickController@cari');
+
+//route karyawan1
+Route::get('/karyawan1','Karyawan1Controller@index');
+
+Route::get('/karyawan1/tambah','Karyawan1Controller@tambah');
+
+Route::post('/karyawan1/store','Karyawan1Controller@store');
+
+Route::get('/karyawan1/hapus/{id}','Karyawan1Controller@hapus');
